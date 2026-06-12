@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fyz1500wr/pharma-analytical-method-lifecycle-platform/schemas/product_profile.schema.json",
+  "title": "Product Profile",
+  "type": "object",
+  "required": ["product_type", "sample_type", "analytical_purpose"],
+  "properties": {
+    "product_name": {"type": "string"},
+    "product_type": {
+      "type": "string",
+      "enum": ["small_molecule", "peptide", "recombinant_protein", "monoclonal_antibody", "adc", "oligonucleotide", "vaccine", "cell_gene_therapy", "complex_formulation", "other"]
+    },
+    "molecule_type": {"type": "string"},
+    "dosage_form": {"type": "string"},
+    "route_of_administration": {"type": "string"},
+    "sample_type": {
+      "type": "string",
+      "enum": ["raw_material", "ipc", "drug_substance", "drug_product", "placebo", "stability_sample", "reference_standard", "working_standard", "other"]
+    },
+    "development_stage": {
+      "type": "string",
+      "enum": ["discovery", "preclinical", "phase_1", "phase_2", "phase_3", "registration", "commercial", "lifecycle", "unknown"]
+    },
+    "analytical_purpose": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["identity", "assay", "potency", "purity", "impurity", "degradation", "stability", "comparability", "characterization", "release", "method_transfer", "process_control", "other"]
+      }
+    },
+    "target_regions": {
+      "type": "array",
+      "items": {"type": "string", "enum": ["TW", "US", "EU", "JP", "ICH", "Other"]}
+    },
+    "cqa_list": {"type": "array", "items": {"type": "string"}},
+    "known_constraints": {"type": "array", "items": {"type": "string"}},
+    "missing_information": {"type": "array", "items": {"type": "string"}},
+    "human_review_required": {"type": "boolean", "default": true}
+  },
+  "additionalProperties": false
+}
