@@ -1,0 +1,33 @@
+{
+  "technology_name": "Synthetic technology",
+  "aliases": [
+    "Synthetic alias"
+  ],
+  "technology_status": "known_not_internally_mapped",
+  "principle_summary": "Synthetic principle summary.",
+  "what_it_measures": "Synthetic measured attribute.",
+  "signal_source": "Synthetic signal source.",
+  "suitable_for": [
+    "Synthetic use A"
+  ],
+  "not_suitable_for": [
+    "Synthetic limitation A"
+  ],
+  "key_controls": [
+    "Synthetic control A"
+  ],
+  "reviewer_focus": [
+    "Synthetic focus A"
+  ],
+  "common_failure_modes": [
+    "Synthetic gap A"
+  ],
+  "sme_review_triggers": [
+    "Synthetic trigger A"
+  ],
+  "evidence_sources": [
+    "synthetic_source_placeholder"
+  ],
+  "confidence": "low",
+  "human_review_required": true
+}
