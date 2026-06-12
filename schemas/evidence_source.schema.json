@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fyz1500wr/pharma-analytical-method-lifecycle-platform/schemas/evidence_source.schema.json",
+  "title": "Evidence Source",
+  "type": "object",
+  "required": ["source_id", "source_type", "title", "evidence_level"],
+  "properties": {
+    "source_id": {"type": "string"},
+    "source_type": {
+      "type": "string",
+      "enum": ["guidance", "regulation", "compendial_metadata", "scientific_literature", "vendor_document", "internal_case", "ai_generated_summary", "other"]
+    },
+    "authority_or_publisher": {"type": "string"},
+    "title": {"type": "string"},
+    "url": {"type": "string"},
+    "version_or_date": {"type": "string"},
+    "retrieval_date": {"type": "string"},
+    "applicable_regions": {"type": "array", "items": {"type": "string"}},
+    "applicable_modules": {"type": "array", "items": {"type": "string"}},
+    "evidence_level": {
+      "type": "string",
+      "enum": ["official_regulatory_source", "internal_rule_table", "curated_scientific_literature", "vendor_lab_information", "historical_internal_case", "ai_inferred", "human_review_required"]
+    },
+    "confidence": {"type": "string", "enum": ["high", "medium", "low", "not_assessed"]},
+    "human_review_status": {"type": "string", "enum": ["not_reviewed", "reviewed", "approved_for_internal_use", "deprecated"]},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": false
+}
