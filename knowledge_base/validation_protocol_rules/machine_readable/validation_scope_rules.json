@@ -1,0 +1,74 @@
+{
+  "rule_set_name": "validation_scope_rules",
+  "version": "0.1.0",
+  "status": "draft",
+  "human_review_required": true,
+  "default_rule_sources": [
+    "knowledge_base/validation_protocol_rules/validation_scope_logic.md"
+  ],
+  "scopes": {
+    "full_validation": {
+      "description": "Complete draft planning package for the stated method use.",
+      "required_planning_fields": [
+        "intended purpose",
+        "sample matrix",
+        "reportable result",
+        "selected characteristics",
+        "experimental design",
+        "criteria rationale",
+        "system checks",
+        "deviation handling",
+        "human review statement"
+      ]
+    },
+    "partial_validation": {
+      "description": "Targeted draft planning package for changed or affected elements.",
+      "required_planning_fields": [
+        "changed elements",
+        "affected characteristics",
+        "excluded characteristic rationale",
+        "criteria rationale",
+        "human review statement"
+      ]
+    },
+    "method_transfer": {
+      "description": "Draft planning package for moving method execution to another laboratory or site.",
+      "required_planning_fields": [
+        "sending unit",
+        "receiving unit",
+        "transfer samples",
+        "comparative criteria",
+        "system checks",
+        "deviation handling",
+        "human review statement"
+      ]
+    },
+    "co_validation": {
+      "description": "Draft planning package for multi-site or multi-lab execution.",
+      "required_planning_fields": [
+        "participating sites",
+        "data comparison strategy",
+        "site responsibilities",
+        "human review statement"
+      ]
+    },
+    "verification": {
+      "description": "Draft planning package for confirming local suitability of an existing method.",
+      "required_planning_fields": [
+        "prior evidence reference",
+        "local suitability checks",
+        "matrix suitability",
+        "human review statement"
+      ]
+    },
+    "other": {
+      "description": "Case-specific draft scope requiring explicit rationale.",
+      "required_planning_fields": [
+        "case-specific rationale",
+        "limitations",
+        "missing information",
+        "human review statement"
+      ]
+    }
+  }
+}
