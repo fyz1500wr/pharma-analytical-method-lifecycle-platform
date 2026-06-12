@@ -1,0 +1,27 @@
+{
+  "protocol_title": "Synthetic Validation Draft",
+  "method_name": "Synthetic method example",
+  "method_type": "synthetic_method",
+  "intended_purpose": [
+    "synthetic review purpose"
+  ],
+  "sample_matrix": "synthetic sample matrix",
+  "validation_scope": "other",
+  "validation_characteristics": [
+    "specificity_selectivity",
+    "precision",
+    "system_suitability",
+    "other"
+  ],
+  "acceptance_criteria": [
+    "Synthetic criterion A",
+    "Synthetic criterion B"
+  ],
+  "experimental_design_summary": "Synthetic placeholder design for schema validation only.",
+  "deviation_handling": "Synthetic placeholder deviation handling text.",
+  "evidence_sources": [
+    "synthetic_source_placeholder"
+  ],
+  "human_review_statement": "Synthetic sample only. Human review required before any real use.",
+  "human_review_required": true
+}
