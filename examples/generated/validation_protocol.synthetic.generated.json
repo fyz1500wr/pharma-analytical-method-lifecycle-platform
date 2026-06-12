@@ -1,0 +1,45 @@
+{
+  "protocol_title": "Draft Validation Protocol - Synthetic potency method example",
+  "method_name": "Synthetic potency method example",
+  "method_type": "bioassay",
+  "intended_purpose": [
+    "potency",
+    "release",
+    "stability"
+  ],
+  "sample_matrix": "synthetic drug product matrix",
+  "validation_scope": "full_validation",
+  "validation_characteristics": [
+    "specificity_selectivity",
+    "precision",
+    "repeatability",
+    "intermediate_precision",
+    "range",
+    "system_suitability",
+    "parallelism",
+    "matrix_effect",
+    "sample_stability"
+  ],
+  "acceptance_criteria": [
+    "Draft criterion requires confirmation with method development data and human review: specificity_selectivity",
+    "Draft criterion requires confirmation with method development data and human review: precision",
+    "Draft criterion requires confirmation with method development data and human review: repeatability",
+    "Draft criterion requires confirmation with method development data and human review: intermediate_precision",
+    "Draft criterion requires confirmation with method development data and human review: range",
+    "Draft criterion requires confirmation with method development data and human review: system_suitability",
+    "Draft criterion requires confirmation with method development data and human review: parallelism",
+    "Draft criterion requires confirmation with method development data and human review: matrix_effect",
+    "Draft criterion requires confirmation with method development data and human review: sample_stability"
+  ],
+  "experimental_design_summary": "Draft full_validation plan for Synthetic potency method example. Scope rationale: Complete draft planning package for the stated method use. Required planning fields: intended purpose, sample matrix, reportable result, selected characteristics, experimental design, criteria rationale, system checks, deviation handling, human review statement. This design requires confirmation with method development data and human review. Missing information must be resolved before final use.",
+  "deviation_handling": "All deviations, invalid runs, repeats, and data exclusions require documentation, impact assessment, and analytical lead / QA review before final use.",
+  "evidence_sources": [
+    "knowledge_base/validation_protocol_rules/validation_protocol_generation_rules.md",
+    "knowledge_base/validation_protocol_rules/validation_characteristic_selection_matrix.md",
+    "knowledge_base/validation_protocol_rules/validation_scope_logic.md",
+    "knowledge_base/validation_protocol_rules/acceptance_criteria_rationale_fields.md",
+    "knowledge_base/validation_protocol_rules/system_suitability_and_deviation_rules.md"
+  ],
+  "human_review_statement": "本文件由 AI 輔助產生，於 GxP、供應商溝通或法規用途使用前，必須由負責之 analytical lead、QA、RA 及 / 或 method owner 審閱確認。",
+  "human_review_required": true
+}
