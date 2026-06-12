@@ -1,0 +1,41 @@
+name: Schema validation
+
+on:
+  push:
+    paths:
+      - 'schemas/**'
+      - '.github/workflows/schema_validation.yml'
+  pull_request:
+    paths:
+      - 'schemas/**'
+      - '.github/workflows/schema_validation.yml'
+  workflow_dispatch:
+
+jobs:
+  validate-json-schemas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate JSON syntax for schemas
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          schema_dir = Path('schemas')
+          files = sorted(schema_dir.glob('*.json'))
+          if not files:
+              raise SystemExit('No schema files found.')
+
+          for path in files:
+              with path.open('r', encoding='utf-8') as f:
+                  json.load(f)
+              print(f'Validated JSON syntax: {path}')
+          PY
