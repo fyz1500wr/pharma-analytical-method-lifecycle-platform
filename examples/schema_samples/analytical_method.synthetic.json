@@ -1,0 +1,31 @@
+{
+  "method_name": "Synthetic potency method example",
+  "method_type": "bioassay",
+  "intended_purpose": [
+    "potency",
+    "release",
+    "stability"
+  ],
+  "sample_matrix": "synthetic drug product matrix",
+  "reportable_result": "relative potency percentage in synthetic example units",
+  "reference_standard": "synthetic qualified reference standard placeholder",
+  "critical_method_parameters": [
+    "cell condition placeholder",
+    "incubation time placeholder",
+    "sample dilution placeholder",
+    "curve fitting model placeholder"
+  ],
+  "system_suitability_tests": [
+    "reference standard response within predefined synthetic range",
+    "negative control response acceptable",
+    "curve fit quality acceptable"
+  ],
+  "known_risks": [
+    "matrix effect not yet assessed",
+    "parallelism requires review",
+    "reference standard strategy requires review"
+  ],
+  "technology_status": "known_not_internally_mapped",
+  "evidence_level": "internal_rule_table",
+  "human_review_required": true
+}
