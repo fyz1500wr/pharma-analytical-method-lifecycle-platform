@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fyz1500wr/pharma-analytical-method-lifecycle-platform/schemas/analytical_method.schema.json",
+  "title": "Analytical Method",
+  "type": "object",
+  "required": ["method_name", "method_type", "intended_purpose"],
+  "properties": {
+    "method_name": {"type": "string"},
+    "method_type": {
+      "type": "string",
+      "enum": ["hplc", "uplc", "sec_hplc", "ce_sds", "icief", "lc_ms", "elisa", "bioassay", "qPCR", "ddPCR", "spr", "bli", "ngs", "nir", "raman", "microbial", "endotoxin", "other"]
+    },
+    "intended_purpose": {"type": "array", "items": {"type": "string"}},
+    "sample_matrix": {"type": "string"},
+    "reportable_result": {"type": "string"},
+    "reference_standard": {"type": "string"},
+    "critical_method_parameters": {"type": "array", "items": {"type": "string"}},
+    "system_suitability_tests": {"type": "array", "items": {"type": "string"}},
+    "known_risks": {"type": "array", "items": {"type": "string"}},
+    "technology_status": {
+      "type": "string",
+      "enum": ["known_internally_mapped", "known_not_internally_mapped", "emerging_insufficient_internal_knowledge", "unclear_requires_clarification"]
+    },
+    "evidence_level": {
+      "type": "string",
+      "enum": ["official_regulatory_source", "internal_rule_table", "curated_scientific_literature", "vendor_lab_information", "historical_internal_case", "ai_inferred", "human_review_required"]
+    },
+    "human_review_required": {"type": "boolean", "default": true}
+  },
+  "additionalProperties": false
+}
