@@ -1,0 +1,40 @@
+{
+  "product_name": "Synthetic training product A",
+  "product_type": "recombinant_protein",
+  "molecule_type": "synthetic recombinant protein example",
+  "dosage_form": "synthetic drug product format",
+  "route_of_administration": "not applicable - synthetic example",
+  "sample_type": "drug_product",
+  "development_stage": "registration",
+  "analytical_purpose": [
+    "release",
+    "stability",
+    "identity",
+    "potency",
+    "purity"
+  ],
+  "target_regions": [
+    "ICH",
+    "TW",
+    "US",
+    "EU"
+  ],
+  "cqa_list": [
+    "identity",
+    "potency",
+    "content",
+    "purity",
+    "degradation profile"
+  ],
+  "known_constraints": [
+    "Synthetic example only",
+    "Not based on any real product, vendor, laboratory, patient, or GxP record"
+  ],
+  "missing_information": [
+    "Final dosage form",
+    "Specification limits",
+    "Reference standard strategy",
+    "Sample preparation procedure"
+  ],
+  "human_review_required": true
+}
