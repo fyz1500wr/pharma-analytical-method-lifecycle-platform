@@ -1,0 +1,203 @@
+{
+  "rule_set_name": "validation_characteristic_selection_rules",
+  "version": "0.1.0",
+  "status": "draft",
+  "human_review_required": true,
+  "default_rule_sources": [
+    "knowledge_base/validation_protocol_rules/validation_characteristic_selection_matrix.md",
+    "knowledge_base/validation_protocol_rules/validation_protocol_generation_rules.md"
+  ],
+  "method_type_rules": {
+    "default": {
+      "usually_include": [
+        "specificity_selectivity",
+        "precision",
+        "range",
+        "system_suitability"
+      ],
+      "conditional": [
+        "accuracy",
+        "repeatability",
+        "intermediate_precision",
+        "linearity",
+        "calibration_model",
+        "robustness",
+        "sample_stability",
+        "reagent_stability",
+        "other"
+      ],
+      "notes": "Default draft rule when method type is not specifically mapped. Requires SME review."
+    },
+    "hplc": {
+      "usually_include": [
+        "specificity_selectivity",
+        "accuracy",
+        "precision",
+        "repeatability",
+        "intermediate_precision",
+        "linearity",
+        "range",
+        "system_suitability"
+      ],
+      "conditional": [
+        "robustness",
+        "sample_stability",
+        "loq",
+        "lod",
+        "matrix_effect"
+      ],
+      "notes": "Generic HPLC assay or related-substance method draft rule."
+    },
+    "uplc": {
+      "inherits": "hplc"
+    },
+    "sec_hplc": {
+      "usually_include": [
+        "specificity_selectivity",
+        "precision",
+        "repeatability",
+        "range",
+        "system_suitability"
+      ],
+      "conditional": [
+        "accuracy",
+        "intermediate_precision",
+        "robustness",
+        "sample_stability",
+        "loq"
+      ],
+      "notes": "Draft rule for aggregate/fragment methods."
+    },
+    "elisa": {
+      "usually_include": [
+        "specificity_selectivity",
+        "precision",
+        "repeatability",
+        "intermediate_precision",
+        "range",
+        "calibration_model",
+        "system_suitability",
+        "matrix_effect"
+      ],
+      "conditional": [
+        "accuracy",
+        "parallelism",
+        "robustness",
+        "sample_stability",
+        "reagent_stability",
+        "loq"
+      ],
+      "notes": "Draft rule for immunoassay-like methods."
+    },
+    "bioassay": {
+      "usually_include": [
+        "specificity_selectivity",
+        "precision",
+        "repeatability",
+        "intermediate_precision",
+        "range",
+        "system_suitability",
+        "parallelism",
+        "matrix_effect"
+      ],
+      "conditional": [
+        "accuracy",
+        "calibration_model",
+        "robustness",
+        "sample_stability",
+        "reagent_stability",
+        "other"
+      ],
+      "notes": "Draft rule for cell-based or functional potency assays."
+    },
+    "qPCR": {
+      "usually_include": [
+        "specificity_selectivity",
+        "accuracy",
+        "precision",
+        "repeatability",
+        "range",
+        "loq",
+        "system_suitability",
+        "matrix_effect"
+      ],
+      "conditional": [
+        "intermediate_precision",
+        "linearity",
+        "robustness",
+        "sample_stability"
+      ],
+      "notes": "Draft rule for nucleic acid quantitation methods."
+    },
+    "ddPCR": {
+      "inherits": "qPCR"
+    },
+    "microbial": {
+      "usually_include": [
+        "specificity_selectivity",
+        "system_suitability",
+        "other"
+      ],
+      "conditional": [
+        "precision",
+        "range",
+        "robustness",
+        "sample_stability",
+        "matrix_effect"
+      ],
+      "notes": "Draft rule for microbiological method suitability. Q2-style mapping may not be direct."
+    },
+    "endotoxin": {
+      "usually_include": [
+        "range",
+        "system_suitability",
+        "matrix_effect"
+      ],
+      "conditional": [
+        "specificity_selectivity",
+        "precision",
+        "robustness",
+        "sample_stability"
+      ],
+      "notes": "Draft rule for endotoxin method suitability and inhibition/enhancement evaluation."
+    }
+  },
+  "purpose_modifiers": {
+    "release": {
+      "add": [
+        "specificity_selectivity",
+        "precision",
+        "system_suitability"
+      ],
+      "note": "Release use increases need for clear intended purpose, acceptance criteria, and review."
+    },
+    "stability": {
+      "add": [
+        "sample_stability",
+        "system_suitability"
+      ],
+      "note": "Stability use should consider ability to monitor change over time."
+    },
+    "potency": {
+      "add": [
+        "parallelism",
+        "matrix_effect"
+      ],
+      "note": "Potency methods often require careful reference standard, matrix, and dilution-response assessment."
+    },
+    "impurity": {
+      "add": [
+        "loq",
+        "range"
+      ],
+      "note": "Impurity methods may need LOQ and reporting range justification."
+    },
+    "method_transfer": {
+      "add": [
+        "precision",
+        "system_suitability"
+      ],
+      "note": "Transfer use should define comparative criteria and receiving lab responsibilities."
+    }
+  }
+}
