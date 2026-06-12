@@ -1,0 +1,132 @@
+{
+  "mapping_name": "protocol_to_report_gap_mapping",
+  "version": "0.1.0",
+  "status": "draft",
+  "human_review_required": true,
+  "source_rule_files": [
+    "knowledge_base/validation_protocol_rules/validation_protocol_generation_rules.md",
+    "knowledge_base/validation_protocol_rules/validation_characteristic_selection_matrix.md",
+    "knowledge_base/validation_protocol_rules/validation_scope_logic.md",
+    "knowledge_base/validation_protocol_rules/acceptance_criteria_rationale_fields.md",
+    "knowledge_base/validation_protocol_rules/system_suitability_and_deviation_rules.md"
+  ],
+  "mappings": [
+    {
+      "id": "PTG-001",
+      "rule_area": "intended_purpose",
+      "expected_element": "Clear intended use and reportable result",
+      "gap_if_missing": "Intended use is unclear or broader than supported data",
+      "reviewer_question": "Please clarify the intended use and reportable result.",
+      "severity": "major",
+      "evidence_level": "internal_rule_table_human_review_required",
+      "feedback_targets": [
+        "validation_protocol_rules",
+        "reviewer_question_bank"
+      ]
+    },
+    {
+      "id": "PTG-002",
+      "rule_area": "validation_scope",
+      "expected_element": "Scope and rationale are defined",
+      "gap_if_missing": "Validation scope is not justified",
+      "reviewer_question": "Please provide the rationale for the selected validation scope.",
+      "severity": "major",
+      "evidence_level": "internal_rule_table_human_review_required",
+      "feedback_targets": [
+        "validation_protocol_rules",
+        "validation_gap_rules"
+      ]
+    },
+    {
+      "id": "PTG-003",
+      "rule_area": "validation_characteristics",
+      "expected_element": "Included and excluded characteristics are justified",
+      "gap_if_missing": "Expected validation characteristic is missing or excluded without rationale",
+      "reviewer_question": "Please explain why the characteristic is not included or not applicable.",
+      "severity": "major",
+      "evidence_level": "internal_rule_table_human_review_required",
+      "feedback_targets": [
+        "validation_protocol_rules",
+        "reviewer_question_bank"
+      ]
+    },
+    {
+      "id": "PTG-004",
+      "rule_area": "acceptance_criteria",
+      "expected_element": "Criteria are linked to purpose, method type, and data source",
+      "gap_if_missing": "Acceptance criteria lack rationale or source",
+      "reviewer_question": "Please provide the basis for each acceptance criterion.",
+      "severity": "major",
+      "evidence_level": "internal_rule_table_human_review_required",
+      "feedback_targets": [
+        "validation_protocol_rules",
+        "validation_gap_rules"
+      ]
+    },
+    {
+      "id": "PTG-005",
+      "rule_area": "system_suitability",
+      "expected_element": "SST monitors critical method performance",
+      "gap_if_missing": "SST is generic or not linked to method performance",
+      "reviewer_question": "Please explain how each SST monitors critical method performance.",
+      "severity": "major",
+      "evidence_level": "internal_rule_table_human_review_required",
+      "feedback_targets": [
+        "validation_gap_rules",
+        "reviewer_question_bank"
+      ]
+    },
+    {
+      "id": "PTG-006",
+      "rule_area": "deviation_handling",
+      "expected_element": "Invalid run, repeat, retest, and exclusion rules are defined",
+      "gap_if_missing": "Failed-run or repeat rule is unclear",
+      "reviewer_question": "Please provide predefined deviation and repeat testing rules.",
+      "severity": "major",
+      "evidence_level": "internal_rule_table_human_review_required",
+      "feedback_targets": [
+        "validation_protocol_rules",
+        "validation_gap_rules"
+      ]
+    },
+    {
+      "id": "PTG-007",
+      "rule_area": "reference_standard",
+      "expected_element": "Reference standard role and qualification are described",
+      "gap_if_missing": "Reference standard strategy is unclear",
+      "reviewer_question": "Please clarify reference standard qualification, storage, handling, and intended role.",
+      "severity": "major",
+      "evidence_level": "internal_rule_table_human_review_required",
+      "feedback_targets": [
+        "method_principle_cards",
+        "reviewer_question_bank"
+      ]
+    },
+    {
+      "id": "PTG-008",
+      "rule_area": "sample_matrix",
+      "expected_element": "Matrix suitability or interference assessment is addressed",
+      "gap_if_missing": "Matrix effect is not addressed",
+      "reviewer_question": "Please provide matrix effect or suitability assessment for the intended matrix.",
+      "severity": "major",
+      "evidence_level": "internal_rule_table_human_review_required",
+      "feedback_targets": [
+        "validation_gap_rules",
+        "reviewer_question_bank"
+      ]
+    },
+    {
+      "id": "PTG-009",
+      "rule_area": "human_review_gate",
+      "expected_element": "Draft-only and human review requirement are clear",
+      "gap_if_missing": "Output appears to imply approval or final use",
+      "reviewer_question": "Please confirm the output remains draft-only and requires qualified review.",
+      "severity": "critical",
+      "evidence_level": "human_review_required",
+      "feedback_targets": [
+        "project_instruction",
+        "templates"
+      ]
+    }
+  ]
+}
