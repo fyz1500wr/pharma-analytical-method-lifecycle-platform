@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fyz1500wr/pharma-analytical-method-lifecycle-platform/schemas/validation_protocol.schema.json",
+  "title": "Validation Protocol Draft",
+  "type": "object",
+  "required": ["protocol_title", "method_name", "intended_purpose", "validation_characteristics"],
+  "properties": {
+    "protocol_title": {"type": "string"},
+    "method_name": {"type": "string"},
+    "method_type": {"type": "string"},
+    "intended_purpose": {"type": "array", "items": {"type": "string"}},
+    "sample_matrix": {"type": "string"},
+    "validation_scope": {"type": "string", "enum": ["full_validation", "partial_validation", "method_transfer", "co_validation", "verification", "other"]},
+    "validation_characteristics": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["specificity_selectivity", "accuracy", "precision", "repeatability", "intermediate_precision", "linearity", "calibration_model", "range", "lod", "loq", "robustness", "system_suitability", "sample_stability", "reagent_stability", "parallelism", "matrix_effect", "other"]
+      }
+    },
+    "acceptance_criteria": {"type": "array", "items": {"type": "string"}},
+    "experimental_design_summary": {"type": "string"},
+    "deviation_handling": {"type": "string"},
+    "evidence_sources": {"type": "array", "items": {"type": "string"}},
+    "human_review_statement": {"type": "string"},
+    "human_review_required": {"type": "boolean", "default": true}
+  },
+  "additionalProperties": false
+}
