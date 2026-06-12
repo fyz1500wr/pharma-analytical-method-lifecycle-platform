@@ -1,0 +1,28 @@
+{
+  "report_title": "Synthetic Report Review Example",
+  "document_type": "other",
+  "method_name": "Synthetic method example",
+  "method_type": "synthetic method type",
+  "analytical_purpose": [
+    "synthetic review purpose"
+  ],
+  "overall_risk": "not_assessed",
+  "gaps": [
+    {
+      "severity": "clarification",
+      "gap_description": "Synthetic gap description.",
+      "why_it_matters": "Synthetic rationale text.",
+      "recommended_action": "Synthetic recommended action.",
+      "evidence_level": "synthetic evidence level",
+      "human_review_required": true
+    }
+  ],
+  "reviewer_questions": [
+    "Synthetic reviewer question?"
+  ],
+  "sme_review_required": true,
+  "evidence_sources": [
+    "synthetic_source_placeholder"
+  ],
+  "human_review_statement": "Synthetic sample only. Human review required before any real use."
+}
