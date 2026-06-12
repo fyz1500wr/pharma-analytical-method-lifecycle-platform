@@ -1,0 +1,16 @@
+{
+  "rule_set_name": "protocol_generation_defaults",
+  "version": "0.1.0",
+  "status": "draft",
+  "draft_only_warning": "AI-assisted draft only. This output does not approve the method, protocol, report, validation conclusion, or regulatory strategy.",
+  "human_review_statement": "本文件由 AI 輔助產生，於 GxP、供應商溝通或法規用途使用前，必須由負責之 analytical lead、QA、RA 及 / 或 method owner 審閱確認。",
+  "default_evidence_sources": [
+    "knowledge_base/validation_protocol_rules/validation_protocol_generation_rules.md",
+    "knowledge_base/validation_protocol_rules/validation_characteristic_selection_matrix.md",
+    "knowledge_base/validation_protocol_rules/validation_scope_logic.md",
+    "knowledge_base/validation_protocol_rules/acceptance_criteria_rationale_fields.md",
+    "knowledge_base/validation_protocol_rules/system_suitability_and_deviation_rules.md"
+  ],
+  "default_acceptance_criteria_prefix": "Draft criterion requires confirmation with method development data and human review",
+  "default_deviation_handling": "All deviations, invalid runs, repeats, and data exclusions require documentation, impact assessment, and analytical lead / QA review before final use."
+}
