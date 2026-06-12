@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+
+# Node
+node_modules/
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Outputs / temporary artifacts
+outputs/
+tmp/
+*.log
+
+# Data files that may contain confidential or GxP-sensitive content
+private_data/
+raw_lab_reports/
+raw_vendor_files/
