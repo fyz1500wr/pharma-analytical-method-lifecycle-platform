@@ -1,0 +1,41 @@
+name: Validation protocol generator tests
+
+on:
+  push:
+    paths:
+      - 'src/validation_protocol_generator/**'
+      - 'tests/validation_protocol_generator/**'
+      - 'schemas/validation_protocol.schema.json'
+      - 'examples/schema_samples/**'
+      - 'knowledge_base/validation_protocol_rules/machine_readable/**'
+      - '.github/workflows/validation_protocol_generator_tests.yml'
+  pull_request:
+    paths:
+      - 'src/validation_protocol_generator/**'
+      - 'tests/validation_protocol_generator/**'
+      - 'schemas/validation_protocol.schema.json'
+      - 'examples/schema_samples/**'
+      - 'knowledge_base/validation_protocol_rules/machine_readable/**'
+      - '.github/workflows/validation_protocol_generator_tests.yml'
+  workflow_dispatch:
+
+jobs:
+  test-validation-protocol-generator:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install jsonschema
+
+      - name: Run generator tests
+        run: |
+          python -m unittest tests/validation_protocol_generator/test_validation_protocol_generator.py
