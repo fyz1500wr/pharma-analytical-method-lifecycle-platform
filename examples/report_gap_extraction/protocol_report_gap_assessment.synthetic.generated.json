@@ -1,0 +1,76 @@
+{
+  "assessment_type": "protocol_report_gap_assessment_draft",
+  "source_document_id": "synthetic-protocol-review-001",
+  "source_document_type": "validation_protocol_draft",
+  "mapping_name": "protocol_to_report_gap_mapping",
+  "mapping_version": "0.1.0",
+  "gap_count": 4,
+  "gaps": [
+    {
+      "gap_id": "PTG-002",
+      "rule_area": "validation_scope",
+      "severity": "major",
+      "gap_description": "Validation scope is not justified",
+      "why_it_matters": "The protocol says full validation but does not explain why full validation is required.",
+      "reviewer_question": "Please provide the rationale for the selected validation scope.",
+      "expected_element": "Scope and rationale are defined",
+      "observed_status": "weak",
+      "evidence_level": "internal_rule_table_human_review_required",
+      "feedback_targets": [
+        "validation_protocol_rules",
+        "validation_gap_rules"
+      ],
+      "human_review_required": true
+    },
+    {
+      "gap_id": "PTG-004",
+      "rule_area": "acceptance_criteria",
+      "severity": "major",
+      "gap_description": "Acceptance criteria lack rationale or source",
+      "why_it_matters": "Criteria are listed but no rationale or source is provided.",
+      "reviewer_question": "Please provide the basis for each acceptance criterion.",
+      "expected_element": "Criteria are linked to purpose, method type, and data source",
+      "observed_status": "unclear",
+      "evidence_level": "internal_rule_table_human_review_required",
+      "feedback_targets": [
+        "validation_protocol_rules",
+        "validation_gap_rules"
+      ],
+      "human_review_required": true
+    },
+    {
+      "gap_id": "PTG-005",
+      "rule_area": "system_suitability",
+      "severity": "major",
+      "gap_description": "SST is generic or not linked to method performance",
+      "why_it_matters": "SST criteria are generic and not linked to critical assay performance.",
+      "reviewer_question": "Please explain how each SST monitors critical method performance.",
+      "expected_element": "SST monitors critical method performance",
+      "observed_status": "weak",
+      "evidence_level": "internal_rule_table_human_review_required",
+      "feedback_targets": [
+        "validation_gap_rules",
+        "reviewer_question_bank"
+      ],
+      "human_review_required": true
+    },
+    {
+      "gap_id": "PTG-006",
+      "rule_area": "deviation_handling",
+      "severity": "major",
+      "gap_description": "Failed-run or repeat rule is unclear",
+      "why_it_matters": "No failed-run, repeat-run, or data exclusion rule is provided.",
+      "reviewer_question": "Please provide predefined deviation and repeat testing rules.",
+      "expected_element": "Invalid run, repeat, retest, and exclusion rules are defined",
+      "observed_status": "missing",
+      "evidence_level": "internal_rule_table_human_review_required",
+      "feedback_targets": [
+        "validation_protocol_rules",
+        "validation_gap_rules"
+      ],
+      "human_review_required": true
+    }
+  ],
+  "human_review_required": true,
+  "human_review_statement": "This gap assessment is AI-assisted and advisory only. It does not approve a protocol, report, method, validation conclusion, or regulatory strategy. Qualified human review is required before any real use."
+}
