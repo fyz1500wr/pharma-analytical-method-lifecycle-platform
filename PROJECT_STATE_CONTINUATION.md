@@ -4,7 +4,7 @@
 
 Repo: `fyz1500wr/pharma-analytical-method-lifecycle-platform`
 
-Project status: **Phase 2 technical foundation implemented; SME review pending**
+Project status: **Phase 2 technical foundation implemented; report gap extractor prototype added; SME review pending**
 
 This project has been initiated as the main repository for the **Pharmaceutical Analytical Method Lifecycle Intelligence Platform**.
 
@@ -141,6 +141,7 @@ These files prepare the human review package but do **not** complete the human r
 - `src/validation_protocol_generator/generate_validation_protocol.py`
 - `src/validation_protocol_generator/render_markdown.py`
 - `src/validation_protocol_generator/render_validation_protocol_markdown.py`
+- `src/report_gap_extractor/extract_protocol_report_gaps.py`
 
 ### GitHub Actions
 
@@ -148,12 +149,15 @@ These files prepare the human review package but do **not** complete the human r
 - `.github/workflows/sample_schema_validation.yml`
 - `.github/workflows/validation_protocol_generator_tests.yml`
 - `.github/workflows/markdown_renderer_tests.yml`
+- `.github/workflows/report_gap_extractor_tests.yml`
 
 ### Examples
 
 - `examples/schema_samples/`
 - `examples/generated/`
 - `examples/technical_context_review/`
+- `examples/report_gap_extraction/protocol_report_review_content.synthetic.json`
+- `examples/report_gap_extraction/protocol_report_gap_assessment.synthetic.generated.json`
 
 ### SME Review Package
 
@@ -177,8 +181,36 @@ The repository currently supports the following draft-only capabilities:
 8. Technical context-aware report review example for cell-based potency assay.
 9. Protocol planning rule to report review gap mapping.
 10. SME review package preparation.
+11. Prototype protocol/report gap extraction using `protocol_to_report_gap_mapping.json`.
+12. Synthetic structured review-content input and generated draft gap assessment output.
+13. Unit tests and GitHub Actions workflow for the report gap extractor.
 
 All outputs are advisory / draft-only and require human review before real use.
+
+---
+
+## Report Gap Extractor Prototype Status
+
+The report gap extractor prototype has been added as a first implementation of the closed-loop review concept.
+
+Key files:
+
+- `src/report_gap_extractor/extract_protocol_report_gaps.py`
+- `examples/report_gap_extraction/protocol_report_review_content.synthetic.json`
+- `examples/report_gap_extraction/protocol_report_gap_assessment.synthetic.generated.json`
+- `tests/report_gap_extractor/test_extract_protocol_report_gaps.py`
+- `.github/workflows/report_gap_extractor_tests.yml`
+
+Current behavior:
+
+- reads structured review findings;
+- maps `rule_area` and `status` to PTG gap IDs;
+- triggers gaps for `missing`, `weak`, `unclear`, `not_addressed`, and `not_provided`;
+- does not trigger gaps for `present`;
+- outputs reviewer questions and feedback targets;
+- keeps human review required.
+
+This is a prototype and should not be treated as a validated review tool.
 
 ---
 
@@ -209,8 +241,9 @@ But all schemas, workflows, and knowledge base entries must remain extensible to
 2. GitHub Actions run status has not been independently confirmed from the connector in this session.
 3. The generator is a first prototype and should be treated as draft-only.
 4. Markdown rendering has been added as a standalone renderer; the original generator remains usable and was not force-overwritten after a safety check blocked a broad update.
-5. No confidential product, vendor, laboratory, patient, or GxP-controlled information should be committed to examples or tests.
-6. Any use for CMC, QA, RA, vendor-facing, GxP, or regulatory purposes requires qualified human review.
+5. Report gap extraction is a first prototype and uses structured synthetic review findings only.
+6. No confidential product, vendor, laboratory, patient, or GxP-controlled information should be committed to examples or tests.
+7. Any use for CMC, QA, RA, vendor-facing, GxP, or regulatory purposes requires qualified human review.
 
 ---
 
@@ -232,7 +265,7 @@ Current open issue health check showed only #9 open.
 
 ## GitHub Actions / CI Health Note
 
-The repository contains schema validation workflows, sample validation workflows, generator tests, and Markdown renderer tests.
+The repository contains schema validation workflows, sample validation workflows, generator tests, Markdown renderer tests, and report gap extractor tests.
 
 During prior health checks, the GitHub connector did not return usable workflow run or status check data for the relevant commits. This means CI status could not be independently confirmed from the connector in this session.
 
@@ -248,8 +281,8 @@ Recommended next sequence:
 2. Keep #9 open until SME / QA / RA / method owner review is completed and documented.
 3. Continue development only with the explicit caveat that validation protocol rules are ready for review but not SME-approved.
 4. Candidate next technical work:
-   - build a protocol/report review gap extraction prototype using `protocol_to_report_gap_mapping.json`;
-   - add tests for the protocol-to-gap mapping file;
+   - render protocol/report gap assessment JSON into a Markdown review report;
+   - add tests for the protocol-to-gap mapping file itself;
    - expand method principle cards beyond cell-based potency assay;
    - add a small user-facing dashboard or CLI index for generated outputs;
    - prepare the first regulatory evidence-pack ingestion prototype.
