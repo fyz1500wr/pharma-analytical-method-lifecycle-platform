@@ -1,0 +1,41 @@
+{
+  "source_document_id": "synthetic-protocol-review-001",
+  "source_document_type": "validation_protocol_draft",
+  "review_findings": [
+    {
+      "rule_area": "intended_purpose",
+      "status": "present",
+      "comment": "Intended use is described as potency support for release and stability."
+    },
+    {
+      "rule_area": "validation_scope",
+      "status": "weak",
+      "comment": "The protocol says full validation but does not explain why full validation is required."
+    },
+    {
+      "rule_area": "validation_characteristics",
+      "status": "present",
+      "comment": "Main characteristics are listed."
+    },
+    {
+      "rule_area": "acceptance_criteria",
+      "status": "unclear",
+      "comment": "Criteria are listed but no rationale or source is provided."
+    },
+    {
+      "rule_area": "system_suitability",
+      "status": "weak",
+      "comment": "SST criteria are generic and not linked to critical assay performance."
+    },
+    {
+      "rule_area": "deviation_handling",
+      "status": "missing",
+      "comment": "No failed-run, repeat-run, or data exclusion rule is provided."
+    },
+    {
+      "rule_area": "human_review_gate",
+      "status": "present",
+      "comment": "Draft-only and human review language is present."
+    }
+  ]
+}
